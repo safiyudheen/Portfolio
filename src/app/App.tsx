@@ -16,6 +16,7 @@ import {
 
 const DISC_CATEGORIES = ["Product Design", "Marketing & Branding", "Motion Design", "Architecture"] as const;
 const TABS = ["Featured Projects", ...DISC_CATEGORIES] as const;
+const WEB3FORMS_ACCESS_KEY = "9e0e2d4b-2f63-4b80-aeda-5d7ef151535d";
 type DisciplineCategory = typeof DISC_CATEGORIES[number];
 type Tab = typeof TABS[number];
 
@@ -1291,11 +1292,41 @@ function ProcessSection() {
 
 function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setErrorMessage("");
+
+    try {
+      const formData = new FormData(e.currentTarget);
+      formData.set("access_key", WEB3FORMS_ACCESS_KEY);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = (await response.json()) as { success?: boolean; message?: string };
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.message || "Unable to send your message right now.");
+      }
+
+      setForm({ name: "", email: "", message: "" });
+      setSubmitted(true);
+    } catch (error) {
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong while sending the message."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -1356,6 +1387,7 @@ function ContactSection() {
                 onSubmit={handleSubmit}
                 className="bg-white p-8 rounded-2xl border border-[#121212]/[0.06] space-y-5"
               >
+                <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
                 <div className="grid sm:grid-cols-2 gap-5">
                   {[
                     { key: "name", label: "Name", type: "text", placeholder: "Your name" },
@@ -1367,6 +1399,7 @@ function ContactSection() {
                       </label>
                       <input
                         required
+                        name={field.key}
                         type={field.type}
                         placeholder={field.placeholder}
                         value={form[field.key as keyof typeof form]}
@@ -1382,6 +1415,7 @@ function ContactSection() {
                   </label>
                   <textarea
                     required
+                    name="message"
                     rows={5}
                     placeholder="Tell me about your project..."
                     value={form.message}
@@ -1391,11 +1425,15 @@ function ContactSection() {
                 </div>
                 <button
                   type="submit"
-                  className="group w-full flex items-center justify-center gap-2.5 py-4 bg-[#121212] text-[#F7F7F5] font-semibold rounded-xl hover:bg-[#3B6FE8] transition-colors duration-300"
+                  disabled={isSubmitting}
+                  className="group w-full flex items-center justify-center gap-2.5 py-4 bg-[#121212] text-[#F7F7F5] font-semibold rounded-xl hover:bg-[#3B6FE8] transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-70"
                 >
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                   <Send className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                 </button>
+                {errorMessage ? (
+                  <p className="text-sm text-red-600">{errorMessage}</p>
+                ) : null}
                 <div className="flex items-center gap-4">
                   <div className="flex-1 h-[1px] bg-[#121212]/8" />
                   <span className="text-xs text-[#121212]/25 font-mono">or</span>
