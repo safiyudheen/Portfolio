@@ -927,10 +927,10 @@ function ExpertiseSection() {
       {/* ── Sticky section header ─────────────────────────────────────── */}
       <div className="sm:sticky lg:static sm:top-[64px] sm:z-40 bg-white sm:border-b sm:border-[#121212]/[0.06] sm:shadow-sm lg:border-none lg:shadow-none">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-5">
-          <div className="flex items-center justify-between gap-6 min-h-[48px]">
-            {/* Title — fixed width so chips column stays stable */}
-            <div style={{ width: "30%", flexShrink: 0 }}>
-              <h2 className="font-display text-[clamp(1.8rem,3.5vw,3rem)] font-semibold text-[#121212] tracking-[-0.02em] leading-tight">
+          <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between lg:gap-6 min-h-[48px]">
+            {/* Title — stays on one line on smaller screens and keeps the desktop layout */}
+            <div className="w-full lg:w-[30%] lg:flex-shrink-0">
+              <h2 className="font-display text-[clamp(1.8rem,3.5vw,3rem)] font-semibold text-[#121212] tracking-[-0.02em] leading-tight whitespace-nowrap">
                 {active === "Motion Design" ? "Motion & Learning" : active}
               </h2>
               <p className="text-[#121212]/40 text-xs mt-0.5">
@@ -939,8 +939,8 @@ function ExpertiseSection() {
               </p>
             </div>
 
-            {/* Tab chips — wraps to multiple lines if needed */}
-            <div className="flex flex-wrap items-center gap-2 shrink min-w-0">
+            {/* Tab chips — move below the title on smaller screens */}
+            <div className="flex flex-wrap items-center gap-2 w-full lg:w-auto lg:flex-1 lg:justify-end">
               {TABS.map((tab) => (
                 <button
                   key={tab}
