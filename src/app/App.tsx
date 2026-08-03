@@ -34,6 +34,7 @@ interface Project {
   featuredSpan: "large" | "medium";
   image: string;
   tags: string[];
+  link?: string;
 }
 
 // ─── Real projects from Behance (behance.net/safiyudheen) ────────────────────
@@ -54,6 +55,7 @@ const PROJECTS: Project[] = [
     featuredSpan: "large",
     image: grabgoImg,
     tags: ["Case Study", "UX Research", "Prototyping", "Figma"],
+    link: "https://www.behance.net/gallery/167162795/UI-UX-Case-Study-FoodTruck-App",
   },
   {
     id: 3,
@@ -69,6 +71,7 @@ const PROJECTS: Project[] = [
     featuredSpan: "medium",
     image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=560&fit=crop&auto=format",
     tags: ["FinTech", "Mobile App", "Design System"],
+    link: "https://www.behance.net/gallery/175593659/RUB-Mobile-Banking-App",
   },
   {
     id: 4,
@@ -84,6 +87,7 @@ const PROJECTS: Project[] = [
     featuredSpan: "medium",
     image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=560&fit=crop&auto=format",
     tags: ["Gamification", "FinTech", "Prototype"],
+    link: "https://www.behance.net/gallery/172786419/EG-Fin-Predict-a-Day-Prediction-Contest-UI",
   },
   {
     id: 5,
@@ -99,6 +103,7 @@ const PROJECTS: Project[] = [
     featuredSpan: "medium",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=560&fit=crop&auto=format",
     tags: ["Dashboard", "Responsive Design", "FinTech"],
+    link: "https://www.behance.net/gallery/172152437/NxtBank-Online-Banking-Portal",
   },
   {
     id: 6,
@@ -114,6 +119,7 @@ const PROJECTS: Project[] = [
     featuredSpan: "medium",
     image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&h=560&fit=crop&auto=format",
     tags: ["UI Redesign", "E-Commerce", "Web Design"],
+    link: "https://www.behance.net/gallery/170237151/Puffy-Website-Redesign",
   },
 
   // ── Marketing & Branding (6) ─────────────────────────────────────────────────
@@ -131,6 +137,7 @@ const PROJECTS: Project[] = [
     featuredSpan: "medium",
     image: "https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=800&h=560&fit=crop&auto=format",
     tags: ["Logo Design", "Brand Identity", "Collateral"],
+    link: "https://www.behance.net/gallery/170096499/CraftPeedika-Brand-Guideline-Logo-Design",
   },
   {
     id: 8,
@@ -146,6 +153,7 @@ const PROJECTS: Project[] = [
     featuredSpan: "medium",
     image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&h=560&fit=crop&auto=format",
     tags: ["Promo Video", "Motion", "Brand Campaign"],
+    link: "https://www.behance.net/gallery/164547755/FRESHNOW-DUBAI-EXPO-PROMO-VIDEO",
   },
   {
     id: 9,
@@ -161,6 +169,7 @@ const PROJECTS: Project[] = [
     featuredSpan: "medium",
     image: "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=800&h=560&fit=crop&auto=format",
     tags: ["Brand Film", "Social Campaign", "After Effects"],
+    link: "https://www.behance.net/gallery/164555245/CelebrateWithFreshnow-PROMO-VIDEO",
   },
   {
     id: 10,
@@ -176,6 +185,7 @@ const PROJECTS: Project[] = [
     featuredSpan: "medium",
     image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&h=560&fit=crop&auto=format",
     tags: ["Brand Film", "Lifestyle", "Video Production"],
+    link: "https://www.behance.net/gallery/164558291/HAPPY-TIMES-FRESHNOW-PROMO-VIDEO",
   },
   {
     id: 11,
@@ -191,6 +201,7 @@ const PROJECTS: Project[] = [
     featuredSpan: "medium",
     image: "https://images.unsplash.com/photo-1562774053-701939374585?w=800&h=560&fit=crop&auto=format",
     tags: ["Web Design", "Non-profit", "UI Design"],
+    link: "https://www.behance.net/gallery/164630575/NSS-NIT-CALICUT-Official-Website",
   },
   {
     id: 12,
@@ -206,6 +217,7 @@ const PROJECTS: Project[] = [
     featuredSpan: "medium",
     image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&h=560&fit=crop&auto=format",
     tags: ["Print Design", "Brand Collateral", "Graphic Design"],
+    link: "https://www.behance.net/gallery/168391995/BROCHURE-DAP-NIT-Calicut",
   },
 
   // ── Motion Design / Motion & Learning (6) ────────────────────────────────────
@@ -223,6 +235,7 @@ const PROJECTS: Project[] = [
     featuredSpan: "medium",
     image: "https://images.unsplash.com/photo-1535016120720-40c646be5580?w=800&h=560&fit=crop&auto=format",
     tags: ["2D Animation", "After Effects", "EdTech"],
+    link: "https://www.behance.net/gallery/170741263/TYNKER-Explainer-Video",
   },
   {
     id: 14,
@@ -238,6 +251,7 @@ const PROJECTS: Project[] = [
     featuredSpan: "medium",
     image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&h=560&fit=crop&auto=format",
     tags: ["EdTech", "Gamification", "UX Prototype"],
+    link: "https://www.behance.net/gallery/172803993/Willow-Know-Challenge-Online-Test-Platform",
   },
   {
     id: 15,
@@ -253,6 +267,7 @@ const PROJECTS: Project[] = [
     featuredSpan: "medium",
     image: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=800&h=560&fit=crop&auto=format",
     tags: ["Micro-Learning", "Interactive", "Figma"],
+    link: "https://www.behance.net/gallery/172803471/Willow-Learn-with-Flash-Card-UI",
   },
   {
     id: 16,
@@ -268,6 +283,7 @@ const PROJECTS: Project[] = [
     featuredSpan: "medium",
     image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&h=560&fit=crop&auto=format",
     tags: ["AI Interface", "Chatbot UX", "EdTech"],
+    link: "https://www.behance.net/gallery/172810349/Willow-AI-Tutor-Chatbot-Interface",
   },
   {
     id: 17,
@@ -315,6 +331,7 @@ const PROJECTS: Project[] = [
     featuredSpan: "large",
     image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=800&h=560&fit=crop&auto=format",
     tags: ["Healthcare Design", "3D Rendering", "Revit"],
+    link: "https://www.behance.net/gallery/164481273/ANGEL-LINI-MEMORIAL-MULTI-SPECIALTY-HOSPITAL",
   },
   {
     id: 20,
@@ -330,6 +347,7 @@ const PROJECTS: Project[] = [
     featuredSpan: "medium",
     image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&h=560&fit=crop&auto=format",
     tags: ["Urban Design", "Research", "Spatial Analysis"],
+    link: "https://www.behance.net/gallery/164478693/TALE-OF-THREE-CITIES",
   },
   {
     id: 21,
@@ -345,6 +363,7 @@ const PROJECTS: Project[] = [
     featuredSpan: "medium",
     image: "https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?w=800&h=560&fit=crop&auto=format",
     tags: ["Affordable Housing", "AutoCAD", "Sustainable Design"],
+    link: "https://www.behance.net/gallery/164486483/AASHRAYAM-LOW-COST-RESIDENCE",
   },
   {
     id: 22,
@@ -360,6 +379,7 @@ const PROJECTS: Project[] = [
     featuredSpan: "medium",
     image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800&h=560&fit=crop&auto=format",
     tags: ["Hospitality", "Landscape", "SketchUp"],
+    link: "https://www.behance.net/gallery/164484209/OZOLINI-TEA-MAKERS-GUEST-HOUSE",
   },
   {
     id: 23,
@@ -375,6 +395,7 @@ const PROJECTS: Project[] = [
     featuredSpan: "large",
     image: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&h=560&fit=crop&auto=format",
     tags: ["Campus Design", "Environmental Design", "Lumion"],
+    link: "https://www.behance.net/gallery/164483285/BIODIVERSITY-RESEARCH-INSTITUTE",
   },
   {
     id: 24,
@@ -696,8 +717,11 @@ function HeroProjectStack() {
         const zIndex = featured.length - Math.abs(offset);
 
         return (
-          <motion.div
+          <motion.a
             key={project.id}
+            href={project.link || "#"}
+            target={project.link ? "_blank" : undefined}
+            rel={project.link ? "noopener noreferrer" : undefined}
             animate={{
               rotate,
               x: translateX,
@@ -710,7 +734,7 @@ function HeroProjectStack() {
             onClick={() => {
               if (!isActive) {
                 setActive(i);
-              } else {
+              } else if (!project.link) {
                 scrollToWorks();
               }
             }}
@@ -748,7 +772,7 @@ function HeroProjectStack() {
 
             {/* Rim light */}
             <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10 pointer-events-none" />
-          </motion.div>
+          </motion.a>
         );
       })}
 
@@ -855,7 +879,10 @@ function Hero() {
 function FeaturedCard({ project, large, index }: { project: Project; large: boolean; index: number }) {
   const [hovered, setHovered] = useState(false);
   return (
-    <motion.div
+    <motion.a
+      href={project.link || "#"}
+      target={project.link ? "_blank" : undefined}
+      rel={project.link ? "noopener noreferrer" : undefined}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
@@ -898,7 +925,7 @@ function FeaturedCard({ project, large, index }: { project: Project; large: bool
           <span className="text-[0.68rem] font-mono text-white">{project.year}</span>
         </div>
       </div>
-    </motion.div>
+    </motion.a>
   );
 }
 
@@ -965,8 +992,11 @@ function ExpertiseSection() {
         <div className="sm:hidden overflow-x-auto flex gap-4 pb-4 snap-x snap-mandatory scrollbar-none">
           <AnimatePresence mode="popLayout">
             {filtered.map((project, i) => (
-              <motion.div
+              <motion.a
                 key={project.id}
+                href={project.link || "#"}
+                target={project.link ? "_blank" : undefined}
+                rel={project.link ? "noopener noreferrer" : undefined}
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
@@ -990,7 +1020,7 @@ function ExpertiseSection() {
                     ))}
                   </div>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </AnimatePresence>
         </div>
@@ -1003,8 +1033,11 @@ function ExpertiseSection() {
         <motion.div layout className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           <AnimatePresence mode="popLayout">
             {filtered.map((project, i) => (
-              <motion.div
+              <motion.a
                 key={project.id}
+                href={project.link || "#"}
+                target={project.link ? "_blank" : undefined}
+                rel={project.link ? "noopener noreferrer" : undefined}
                 layout
                 initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -1054,7 +1087,7 @@ function ExpertiseSection() {
                     ))}
                   </div>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </AnimatePresence>
         </motion.div>
